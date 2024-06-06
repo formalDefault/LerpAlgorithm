@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Black"   
+             NavigationPage.HasNavigationBar="false"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             x:Class="SkiaAnimations.MainPage">
+    <ContentPage.Content>
+        <Grid>
+            <skia:SKCanvasView x:Name="canvasView" PaintSurface="canvasView_PaintSurface" /> 
+            <ContentView x:Name="modalOverlay" 
+                         IsVisible="False"                        
+                         BackgroundColor="#80000000"
+                         HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="FillAndExpand">
+                <Frame BackgroundColor="#262626"
+                       CornerRadius="30"
+                       Padding="20"
+                       x:Name="modal"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#262626" Padding="20" MaximumWidthRequest="300">
+                        <Label Text="Esta es una practica para animar los nodos de un grafo" FontSize="16" HorizontalTextAlignment="Center"/>
+                        <Button Text="OK" Clicked="OnCloseModalClicked" Background="#E21111" TextColor="White" Margin="0,25,0,0" />
+                    </StackLayout>
+                </Frame>
+            </ContentView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
